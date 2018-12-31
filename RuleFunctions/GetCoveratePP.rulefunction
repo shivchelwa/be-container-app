@@ -1,0 +1,39 @@
+/**
+ * @description 
+ */
+void rulefunction RuleFunctions.GetCoveratePP {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Events.FindCoverageHttpReq findCoverageReq;
+	}
+	body {
+		System.debugOut("Received request to determine coverage for account number: " + findCoverageReq.AccountNumber);
+		Events.LogEvent logEvent = Events.LogEvent.LogEvent(null, null, "Received determine coverage request for account number: " + findCoverageReq.AccountNumber);
+		Event.Ext.sendEventImmediate(logEvent);
+		
+		String httpURL = System.getGlobalVariableAsString("%%ExternalAPI/ElastiCache/GetCoverageAPI%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=") + findCoverageReq.AccountNumber;
+		
+		System.debugOut("HTTPURL: " + httpURL);
+		
+		Object httpConnection = HTTP.ConnectionInfo.createHTTPConnectionInfo(true);
+		
+		Events.GetCoverageHttpReq httpReq = Events.GetCoverageHttpReq.GetCoverageHttpReq(null, null);
+		
+		Events.GetCoverageHttpRes httpRes = HTTP.sendRequest(httpURL, httpReq, "/Events/GetCoverageHttpRes", 1000, httpConnection);
+		
+		System.debugOut("HTTP Response: " + httpRes@payload);
+		
+		logEvent = Events.LogEvent.LogEvent(null, null, "Plan Details: " + httpRes@payload);
+		Event.Ext.sendEventImmediate(logEvent);
+		
+		//Concepts.Coverage coverage = Concepts.Coverage.Coverage(null/*extId String */,"A2020201"/*AccountNumber String */,2000/*Deductible double */,2000/*OutOfPocketMax double */);
+		//System.debugOut(Instance.serializeToJSON(coverage, true, ""));
+		
+		Events.FindCoverageHttpRes response = Events.FindCoverageHttpRes.FindCoverageHttpRes(null, null);
+		
+		Event.replyEvent (findCoverageReq, response);
+		//Event.consumeEvent(findCoverageReq);
+	}
+}

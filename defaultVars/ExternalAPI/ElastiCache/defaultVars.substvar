@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<repository xmlns="http://www.tibco.com/xmlns/repo/types/2002">
+    <globalVariables>
+        <globalVariable>
+            <name>GetCoverageAPI</name>
+            <value>https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1546193266480</modTime>
+        </globalVariable>
+    </globalVariables>
+</repository>

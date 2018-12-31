@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<repository xmlns="http://www.tibco.com/xmlns/repo/types/2002">
+    <globalVariables>
+        <globalVariable>
+            <name>BrokerURL</name>
+            <value>localhost:9092</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1545602590725</modTime>
+        </globalVariable>
+        <globalVariable>
+            <name>SecurityProtocol</name>
+            <value>PLAINTEXT</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1545602635849</modTime>
+        </globalVariable>
+        <globalVariable>
+            <name>SASLMechanism</name>
+            <value>PLAIN</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1545602710438</modTime>
+        </globalVariable>
+    </globalVariables>
+</repository>

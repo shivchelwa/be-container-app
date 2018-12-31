@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="LogEvent" description="" GUID="19FBC89E-68B3-A66C-F4FF-7DC414DE657A" ownerProjectName="be-container-app" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/Kafka" destinationName="LogMessage">
+  <properties name="Message" ownerProjectName="be-container-app" conceptTypePath="/Events/LogEvent" ownerPath="/Events/LogEvent"/>
+  <expiryAction folder="/Events/LogEvent" name="Waypoint_expiryAction" ownerProjectName="be-container-app" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="waypoint" type="/Events/LogEvent"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>
