@@ -1,0 +1,46 @@
+/**
+ * @description 
+ */
+void rulefunction RuleFunctions.FindCoveragePP {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Events.FindCoverageRequest findCoverageReq;
+	}
+	body {
+		System.debugOut("Received request to find coverage for " + findCoverageReq@payload);
+		Events.LogEvent logEvent = Events.LogEvent.LogEvent(null, null, "Received request to find coverage for patient");
+		Event.Ext.sendEventImmediate(logEvent);
+		
+		try {
+			//Create a EligibilityRequest Concept from JSON payload
+			Concepts.EligibilityRequest eligibilityRequest = Instance.createInstanceFromJSON("/Concepts/EligibilityRequest", findCoverageReq@payload);
+			
+			//Get Reference Coverage from Cache
+			String httpURL = System.getGlobalVariableAsString("%%ExternalAPI/ElastiCache/GetCoverageAPI%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=") + eligibilityRequest.Coverage.reference;
+			
+			System.debugOut("HTTPURL: " + httpURL);
+			
+			Object httpConnection = HTTP.ConnectionInfo.createHTTPConnectionInfo(true);
+			
+			Events.GetCoverageRequest httpReq = Events.GetCoverageRequest.GetCoverageRequest(null, null);
+			
+			Events.GetCoverageHttpRes httpRes = HTTP.sendRequest(httpURL, httpReq, "/Events/GetCoverageHttpRes", 1000, httpConnection);
+			
+			System.debugOut("HTTP Response: " + httpRes@payload);
+			
+			Concepts.EligibilityResponse eligibilityResponse = Instance.createInstance("xslt://{{/Concepts/EligibilityResponse}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"2.0\"><xsl:param name=\"eligibilityRequest\"/><xsl:template name=\"Function\" match=\"/\"><createObject><object><xsl:if test=\"$eligibilityRequest/ResourceType\"><ResourceType><xsl:value-of select=\"$eligibilityRequest/ResourceType\"/></ResourceType></xsl:if><xsl:if test=\"$eligibilityRequest/ID\"><ID><xsl:value-of select=\"$eligibilityRequest/ID\"/></ID></xsl:if><xsl:if test=\"$eligibilityRequest/Status\"><Status><xsl:value-of select=\"$eligibilityRequest/Status\"/></Status></xsl:if><xsl:if test=\"$eligibilityRequest/Created\"><Created><xsl:value-of select=\"$eligibilityRequest/Created\"/></Created></xsl:if><Request><xsl:copy-of select=\"$eligibilityRequest/Patient/ancestor-or-self::*/namespace::node()\"/><xsl:copy-of select=\"$eligibilityRequest/Patient/@*\"/><xsl:copy-of select=\"$eligibilityRequest/Patient/node()\"/></Request><Disposition><xsl:value-of select=\"&quot;Policy is currently in-force.&quot;\"/></Disposition><Coverage><xsl:if test=\"$eligibilityRequest/Coverage/@ref\"><xsl:attribute name=\"ref\"><xsl:value-of select=\"$eligibilityRequest/Coverage/@ref\"/></xsl:attribute></xsl:if></Coverage><Insurer><xsl:if test=\"$eligibilityRequest/Insurer/@ref\"><xsl:attribute name=\"ref\"><xsl:value-of select=\"$eligibilityRequest/Insurer/@ref\"/></xsl:attribute></xsl:if></Insurer><Inforce><xsl:value-of select=\"false()\"/></Inforce></object></createObject></xsl:template></xsl:stylesheet>");
+			
+			String responsePayload = Instance.serializeToJSON(eligibilityResponse, true, "");
+			
+			Events.FindCoverageResponse findCoverageRes = Events.FindCoverageResponse.FindCoverageResponse(null, responsePayload);
+			
+			Event.replyEvent(findCoverageReq, findCoverageRes);
+			
+		} catch(Exception ex) {
+			Events.LogException logException = Events.LogException.LogException(null, null, "Error occured in " + Engine.ruleFunctionName() + ex@message);
+			Event.Ext.sendEventImmediate(logException);
+		}
+	}
+}

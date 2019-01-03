@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cluster xmlns="http://tibco.com/businessevents/configuration/5.5">
     <revision>
-        <version>10</version>
+        <version>13</version>
         <author>shivkumarchelwa</author>
-        <date>2018/12/28 22:54:01</date>
+        <date>2019/01/02 17:49:53</date>
         <comment/>
     </revision>
     <name>ChangeHealthPOC</name>
@@ -35,12 +35,20 @@
     <destination-groups>
         <destinations id="Destinations_Collection_1">
             <destination id="GetCoverage_32126726">
-                <pre-processor>/RuleFunctions/GetCoveratePP</pre-processor>
+                <pre-processor>/RuleFunctions/GetCoveragePP</pre-processor>
                 <queue-size>0</queue-size>
                 <thread-count/>
                 <threading-model>caller</threading-model>
                 <thread-affinity-rule-function/>
                 <uri>/Channels/HTTP/GetCoverage</uri>
+            </destination>
+            <destination id="FindCoverage_7489B64E">
+                <pre-processor>/RuleFunctions/FindCoveragePP</pre-processor>
+                <queue-size>0</queue-size>
+                <thread-count/>
+                <threading-model>shared-queue</threading-model>
+                <thread-affinity-rule-function/>
+                <uri>/Channels/HTTP/FindCoverage</uri>
             </destination>
         </destinations>
     </destination-groups>

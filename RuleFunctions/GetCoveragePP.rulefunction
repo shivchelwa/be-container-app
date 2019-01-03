@@ -1,7 +1,7 @@
 /**
  * @description 
  */
-void rulefunction RuleFunctions.GetCoveratePP {
+void rulefunction RuleFunctions.GetCoveragePP {
 	attribute {
 		validity = ACTION;
 	}
@@ -19,7 +19,7 @@ void rulefunction RuleFunctions.GetCoveratePP {
 		
 		Object httpConnection = HTTP.ConnectionInfo.createHTTPConnectionInfo(true);
 		
-		Events.GetCoverageHttpReq httpReq = Events.GetCoverageHttpReq.GetCoverageHttpReq(null, null);
+		Events.GetCoverageRequest httpReq = Events.GetCoverageRequest.GetCoverageRequest(null, null);
 		
 		Events.GetCoverageHttpRes httpRes = HTTP.sendRequest(httpURL, httpReq, "/Events/GetCoverageHttpRes", 1000, httpConnection);
 		

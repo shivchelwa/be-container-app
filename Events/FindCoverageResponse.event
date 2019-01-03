@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="FindCoverageResponse" description="" GUID="25EBDA4E-32A2-3DB0-768E-FC3FBFD62314" ownerProjectName="be-container-app" superEventPath="" ttlUnits="Seconds">
+  <namespaceEntries prefix="xsd" namespace="http://www.w3.org/2001/XMLSchema"/>
+  <expiryAction folder="/Events/FindCoverageResponse" name="EligibilityResponse_expiryAction" ownerProjectName="be-container-app" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="eligibilityresponse" type="/Events/FindCoverageResponse"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

@@ -11,9 +11,19 @@
         <properties xsi:type="designtime:SimpleProperty" name="be.http.pageFlowFunction" value=""/>
       </properties>
     </destinations>
-    <destinations folder="/Channels/HTTP/" name="GetPlanDetails" description="" GUID="60879A6D-EADA-4D5D-8902-DBDB21AB9545" ownerProjectName="be-container-app" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
+    <destinations folder="/Channels/HTTP/" name="GetReferenceCoverage" description="" GUID="60879A6D-EADA-4D5D-8902-DBDB21AB9545" ownerProjectName="be-container-app" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
       <properties>
+        <properties xsi:type="designtime:SimpleProperty" name="IncludeEventType" value="ALWAYS" mandatory="true"/>
         <properties xsi:type="designtime:SimpleProperty" name="be.http.jsonPayload" value="false"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.IncludeEventType" value="ALWAYS"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.PageFlow" value="false"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.contextPath" value=""/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.pageFlowFunction" value=""/>
+      </properties>
+    </destinations>
+    <destinations name="FindCoverage" description="" GUID="E1CF6382-27BA-C710-F976-E8EA22AA61A9" ownerProjectName="be-container-app" eventURI="/Events/FindCoverageRequest" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
+      <properties>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.jsonPayload" value="true"/>
         <properties xsi:type="designtime:SimpleProperty" name="be.http.IncludeEventType" value="ALWAYS"/>
         <properties xsi:type="designtime:SimpleProperty" name="be.http.PageFlow" value="false"/>
         <properties xsi:type="designtime:SimpleProperty" name="be.http.contextPath" value=""/>
