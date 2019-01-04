@@ -35,7 +35,9 @@ void rulefunction RuleFunctions.FindCoveragePP {
 		eligibilityResponse.insurer.reference = eligibilityRequest.insurer.reference;
 		eligibilityResponse.request = Instance.newInstance("/Concepts/ReferenceRequestRes", null);
 		eligibilityResponse.request.reference = String.concat(Scorecards.SystemConstants.EligibilityRequestURL, eligibilityRequest.ID);
-
+		eligibilityResponse.inforce = false;
+		eligibilityResponse.disposition = "Policy is currently lapsed";
+		
 		try {						
 			//Get Reference Coverage from Cache
 			long httpRequestTimeout = Scorecards.SystemConstants.CacheRequestTimeout;

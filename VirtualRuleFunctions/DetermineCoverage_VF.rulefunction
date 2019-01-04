@@ -11,6 +11,6 @@ virtual void rulefunction VirtualRuleFunctions.DetermineCoverage_VF {
 		Concepts.EligibilityResponse eligibiityRes;
 	}
 	body {
-		
+
 	}
 }

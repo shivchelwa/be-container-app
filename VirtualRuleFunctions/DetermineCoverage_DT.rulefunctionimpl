@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Table:Table xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Table="http:///com/tibco/cep/decision/table/model/DecisionTable.ecore" name="DetermineCoverage_DT" folder="/VirtualRuleFunctions/" implements="/VirtualRuleFunctions/DetermineCoverage_VF">
-  <decisionTable/>
+<Table:Table xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Table="http:///com/tibco/cep/decision/table/model/DecisionTable.ecore" name="DetermineCoverage_DT" folder="/VirtualRuleFunctions/" implements="/VirtualRuleFunctions/DetermineCoverage_VF" since="BE 4.0">
+  <decisionTable>
+    <rule id="1">
+      <cond id="1_2" colId="2" expr="25"/>
+      <act id="1_4" colId="4" expr="System.debugOut(&quot;DT#1&quot;);"/>
+      <act id="1_3" colId="3" expr="true"/>
+    </rule>
+    <rule id="2">
+      <cond id="2_2" colId="2" expr="&lt; 30"/>
+      <act id="2_3" colId="3" expr="true"/>
+      <act id="2_4" colId="4" expr="System.debugOut(&quot;DT#2&quot;);"/>
+    </rule>
+    <columns>
+      <column id="2" name="coverage.Copay" propertyPath="/Concepts/Coverage/Copay" propertyType="1" columnType="CONDITION"/>
+      <column id="3" name="eligibiityRes.inforce" propertyPath="/Concepts/EligibilityResponse/inforce" propertyType="4" columnType="ACTION"/>
+      <column id="4" name="Custom Action 1" propertyPath="" columnType="CUSTOM_ACTION"/>
+    </columns>
+  </decisionTable>
   <exceptionTable/>
   <argument direction="BOTH">
     <property path="/Concepts/Coverage" alias="coverage" resourceType="CONCEPT"/>

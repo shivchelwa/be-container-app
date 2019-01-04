@@ -17,15 +17,17 @@ rule Rules.DetermineCoverage {
 		findCoverageReq.requestId == eligibiityReq.requestId;
 		eligibiityReq.requestId == eligibiityRes.ID;
 		eligibiityReq.coverage.reference == coverage.CoverageId;
+		coverage.EffectiveEndDate >= Date.today();
+		coverage.EffectiveStartDate <= Date.today();
 	}
 	then {
 		System.debugOut(Engine.ruleName());
-		Object[] arguments = {eligibiityReq, coverage};
-		VRF.invokeVRFImplByName("/VirtualRuleFunctions.DetermineCoverage_VF", "DetermineCoverage_DT", arguments);
 		
 		//Decision Table Rules Set inforce=true/false
-		if(eligibiityRes.inforce == true) {
-			eligibiityRes.disposition = "Policy is currently in-force";
-		}
+		eligibiityRes.inforce = true;
+		eligibiityRes.disposition = "Policy is currently in-force";
+
+		//Object[] arguments = {coverage, eligibiityReq, eligibiityRes};
+		//VRF.invokeVRFImplByName("/VirtualRuleFunctions.DetermineCoverage_VF", "DetermineCoverage_DT", arguments);
 	}
 }
