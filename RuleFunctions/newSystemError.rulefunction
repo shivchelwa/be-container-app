@@ -1,7 +1,7 @@
 /**
  * @description Create and return a new instance of SystomError
  */
-Concept rulefunction RuleFunctions.InstantiateSystemError {
+Concept rulefunction RuleFunctions.newSystemError {
 	attribute {
 		validity = ACTION;
 	}

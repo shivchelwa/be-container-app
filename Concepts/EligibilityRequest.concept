@@ -9,4 +9,5 @@
   <properties name="organization" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceOrganization" ownerPath="/Concepts/EligibilityRequest"/>
   <properties name="insurer" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceInsurer" ownerPath="/Concepts/EligibilityRequest"/>
   <properties name="coverage" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceCoverage" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="requestId" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
 </element:Concept>

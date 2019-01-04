@@ -2,6 +2,6 @@
 <configuration:StudioProjectConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:configuration="http:///com/tibco/cep/studio/common/configuration/model/project_configuration.ecore" name="be-container-app" version="5.5.0" build="170" xpathVersion="2.0">
   <javaSourceFolderEntries entryType="JAVA_SOURCE_FOLDER" path="/ChangeHealthPOC/JavaSrc" readOnly="true"/>
   <javaSourceFolderEntries entryType="JAVA_SOURCE_FOLDER" path="/be-container-app/JavaSrc" readOnly="true"/>
-  <enterpriseArchiveConfiguration name="ChangeHealthPOC" author="shivkumarchelwa" version="18" path="/Users/shivkumarchelwa/workspace/docker/CHC/ChangeHealthPOC-1.0.0.ear" overwrite="true"/>
+  <enterpriseArchiveConfiguration name="ChangeHealthPOC" author="shivkumarchelwa" version="22" path="/Users/shivkumarchelwa/workspace/docker/CHC/ChangeHealthPOC-1.0.0.ear" overwrite="true"/>
   <bpmnProcessSettings/>
 </configuration:StudioProjectConfiguration>

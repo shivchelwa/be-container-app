@@ -1,0 +1,23 @@
+/**
+ * @description 
+ * @author Shivkumars-MacBook-Pro.local
+ */
+rule Rules.ReplyEligibility {
+	attribute {
+		priority = 10;
+		forwardChain = true;
+	}
+	declare {
+		Events.FindCoverageRequest findCoverageReq;
+		Concepts.EligibilityResponse eligibiityRes;
+	}
+	when {
+		findCoverageReq.requestId == eligibiityRes.ID;
+	}
+	then {
+		System.debugOut(Engine.ruleName());
+		String responsePayload = Instance.serializeToJSON(eligibiityRes, true, "");
+		Events.FindCoverageResponse findCoverageRes = Events.FindCoverageResponse.FindCoverageResponse(null, responsePayload);
+		Event.replyEvent(findCoverageReq, findCoverageRes);
+	}
+}

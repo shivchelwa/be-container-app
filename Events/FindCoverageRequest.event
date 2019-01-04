@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="FindCoverageRequest" description="Determine Coverage for a patient" GUID="E56442B1-4126-0CED-9E5E-555DE202B354" ownerProjectName="be-container-app" superEventPath="" ttlUnits="Seconds">
+  <properties name="requestId" ownerProjectName="be-container-app" ownerPath="/Events/FindCoverageRequest"/>
   <namespaceEntries prefix="xsd" namespace="http://www.w3.org/2001/XMLSchema"/>
   <expiryAction folder="/Events/FindCoverageRequest" name="EligibilityRequest_expiryAction" ownerProjectName="be-container-app" actionText="" conditionText="">
     <symbols>

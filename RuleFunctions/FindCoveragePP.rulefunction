@@ -9,15 +9,23 @@ void rulefunction RuleFunctions.FindCoveragePP {
 			Events.FindCoverageRequest findCoverageReq;
 	}
 	body {
-		System.debugOut("Received request to find coverage for " + findCoverageReq@payload);
-		Events.LogEvent logEvent = Events.LogEvent.LogEvent(null, null, "Received request to find coverage for patient");
+		System.debugOut(Engine.ruleFunctionName());
+		System.debugOut("Request Payload " + findCoverageReq@payload);
+		Events.LogEvent logEvent = Events.LogEvent.LogEvent(null, null, "Received DetermineCoverage, Event Payload: " + findCoverageReq@payload);
 		Event.Ext.sendEventImmediate(logEvent);
+		
+		//Generate UUID
+		String UUID = Functions.Generate.UUID();;
+		findCoverageReq.requestId = UUID;
 
+		//Create a EligibilityRequest Concept from JSON payload
 		Concepts.EligibilityRequest eligibilityRequest = Instance.createInstanceFromJSON("/Concepts/EligibilityRequest", findCoverageReq@payload);
+		eligibilityRequest.requestId = UUID;
 		System.debugOut("EligibilityRequest JSON: " + Instance.serializeToJSON(eligibilityRequest, true, ""));
 
+		//Create response with defaults
 		Concepts.EligibilityResponse eligibilityResponse = Instance.newInstance("/Concepts/EligibilityResponse", null);
-		eligibilityResponse.ID = Functions.UUID();
+		eligibilityResponse.ID = UUID;
 		eligibilityResponse.created = eligibilityRequest.created;
 		eligibilityResponse.resourceType = eligibilityRequest.resourceType;
 		eligibilityResponse.status = eligibilityRequest.status;
@@ -26,16 +34,13 @@ void rulefunction RuleFunctions.FindCoveragePP {
 		eligibilityResponse.insurer = Instance.newInstance("/Concepts/ReferenceInsurerRes", null);
 		eligibilityResponse.insurer.reference = eligibilityRequest.insurer.reference;
 		eligibilityResponse.request = Instance.newInstance("/Concepts/ReferenceRequestRes", null);
-		eligibilityResponse.request.reference = String.concat(System.getGlobalVariableAsString("%%Application/RequestURL%%", ""), eligibilityRequest.ID);
+		eligibilityResponse.request.reference = String.concat(Scorecards.SystemConstants.EligibilityRequestURL, eligibilityRequest.ID);
 
-		String disposition = "";
-		try {
-			//Create a EligibilityRequest Concept from JSON payload
-						
+		try {						
 			//Get Reference Coverage from Cache
-			long httpRequestTimeout = System.getGlobalVariableAsLong("%%Tuning/HttpRequestTimeout%%", 1000);
-			String getCacheURL = System.getGlobalVariableAsString("%%ExternalAPI/ElastiCache/GetCoverageAPI%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=");
-			String httpURL = String.concat(getCacheURL, eligibilityRequest.coverage.reference);			
+			long httpRequestTimeout = Scorecards.SystemConstants.CacheRequestTimeout;
+			String getCacheURL = Scorecards.SystemConstants.CacheRequestURL;
+			String httpURL = String.concat(getCacheURL, eligibilityRequest.coverage.reference);		
 			System.debugOut("HTTPURL: " + httpURL);
 			Object httpConnection = HTTP.ConnectionInfo.createHTTPConnectionInfo(true);
 			Events.GetCoverageRequest httpReq = Events.GetCoverageRequest.GetCoverageRequest(null, null);
@@ -43,41 +48,30 @@ void rulefunction RuleFunctions.FindCoveragePP {
 			
 			System.debugOut("HTTP Response: " + httpRes@payload);
 			Object jsonContent = JSON.parseJSON(httpRes@payload);
-			System.debugOut("HTTP Response jsonContent: " + jsonContent);
 			Object statusCodeNode = JSON.getNode(jsonContent, "statusCode");
-			System.debugOut("statusCode: " + statusCodeNode);
 			Object bodyNode = JSON.getNode(jsonContent, "body");
-			System.debugOut("body: " + bodyNode);
-			System.debugOut("body: " + bodyNode);
+			//Throw exception if coverage not found
 			if(statusCodeNode == null ||  JSON.getTextValue(statusCodeNode) != "200"
-				|| bodyNode == "null" || JSON.getTextValue(statusCodeNode) == "") {
-				System.debugOut("Cache returned null");
-				throw Exception.newException("Cache returned null for coverageId: " + eligibilityRequest.coverage.reference, "", null);
+				|| Functions.Java.getSimpleClassName(bodyNode) == "NullNode" || JSON.getTextValue(statusCodeNode) == "") {
+				//System.debugOut("getCache request returned null: " + jsonContent);
+				throw Exception.newException("getCache request returned null: " + jsonContent + " for coverageId: " + eligibilityRequest.coverage.reference, "", null);
 			}
 			
 			Concepts.Coverage cacheCoverage = Instance.createInstanceFromJSON("/Concepts/Coverage", JSON.getTextValue(bodyNode));
-			System.debugOut("CacheCoverage JSON: " + Instance.serializeToJSON(cacheCoverage, true, ""));
+			System.debugOut("Cached Coverage JSON: " + Instance.serializeToJSON(cacheCoverage, true, ""));
 			
 		} catch(Exception ex) {
 			
 			System.debugOut(Engine.ruleFunctionName() + " - Error Occured: " + ex@message);
 
-			Events.LogException logException = Events.LogException.LogException(null, null, Engine.ruleFunctionName() + " - Error Occured: " + ex@message);
-			Event.Ext.sendEventImmediate(logException);
-			
 			String system = Scorecards.SystemConstants.NoCoverageSystem;
 			String code = Scorecards.SystemConstants.NoCoverageCode;
+			eligibilityResponse.inforce = false;
+			eligibilityResponse.disposition = "coverage not found";
+			eligibilityResponse.error[eligibilityResponse.error@length] = RuleFunctions.newSystemError(system, code);
 			
-			eligibilityResponse.error[eligibilityResponse.error@length] = RuleFunctions.InstantiateSystemError(system, code);
-			
-		} finally {
-		
-			eligibilityResponse.inforce = (String.equals(disposition, ""));
-			eligibilityResponse.disposition = disposition;
-			
-			String responsePayload = Instance.serializeToJSON(eligibilityResponse, true, "");
-			Events.FindCoverageResponse findCoverageRes = Events.FindCoverageResponse.FindCoverageResponse(null, responsePayload);
-			Event.replyEvent(findCoverageReq, findCoverageRes);
+			Events.LogException logException = Events.LogException.LogException(null, null, Engine.ruleFunctionName() + " - Error Occured: " + ex@message);
+			Event.Ext.sendEventImmediate(logException);
 		}
 	}
 }

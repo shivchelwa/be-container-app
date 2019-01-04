@@ -6,7 +6,7 @@ import com.tibco.be.model.functions.BEFunction;
 import com.tibco.be.model.functions.BEPackage;
 import static com.tibco.be.model.functions.FunctionDomain.ACTION;
 
-@BEPackage(catalog = "Util", category = "Functions", synopsis = "Utility Functions")
+@BEPackage(catalog = "Cust", category = "Functions.Generate", synopsis = "Utility Functions")
 public class UtilFunctions {
 	
 	@BEFunction(name = "UUID", 

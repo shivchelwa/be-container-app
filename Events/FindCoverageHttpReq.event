@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="FindCoverageHttpReq" description="" GUID="23E9ED16-82DD-B6D9-6FC5-595C14AB1A64" ownerProjectName="be-container-app" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/HTTP" destinationName="GetCoverage">
-  <properties name="AccountNumber" ownerProjectName="be-container-app" conceptTypePath="/Events/FindCoverageHttpReq" ownerPath="/Events/FindCoverageHttpReq"/>
-  <expiryAction folder="/Events/FindCoverageHttpReq" name="Coverage_expiryAction" ownerProjectName="be-container-app" actionText="" conditionText="">
-    <symbols>
-      <symbolList idName="coverage" type="/Events/FindCoverageHttpReq"/>
-    </symbols>
-  </expiryAction>
-</event:SimpleEvent>
