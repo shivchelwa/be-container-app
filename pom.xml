@@ -6,7 +6,7 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.tibco.be.poc.chc</groupId>
-  <artifactId>ChangeHealthPOC</artifactId>
+  <artifactId>be_container_app</artifactId>
   <version>1.0.0</version>
   <packaging>ear</packaging>
   <build>
@@ -31,13 +31,13 @@
             <password>admin</password>
           </teaConfig>
           <appImageConfig>
-            <cddFileLocation>Deployments/ChangeHealthPOC.cdd</cddFileLocation>>
+            <cddFileLocation>Deployments/be_container_app.cdd</cddFileLocation>>
             <targetDir>/Users/shivkumarchelwa/workspace/docker/CHC</targetDir>
             <baseBEImage>5.5.0-v01</baseBEImage>
-            <maintainer>ChangeHealthPOC</maintainer>
-            <email>chc@abc.com</email>
-            <labels>ApplicationName=ChangeHealthPOC</labels>
-            <appImage>chc:latest</appImage>
+            <maintainer>shiv chelwa</maintainer>
+            <email>schelwa@tibco.com</email>
+            <labels>ApplicationName=be_container_app</labels>
+            <appImage>be_container_app:latest</appImage>
             <overwriteDockerfile>true</overwriteDockerfile>
           </appImageConfig>
           <dockerRegistryConfig>

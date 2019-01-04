@@ -3,13 +3,13 @@
     <globalVariables>
         <globalVariable>
             <name>HttpRequestTimeout</name>
-            <value>1000</value>
+            <value>3000</value>
             <type>Integer</type>
             <deploymentSettable>true</deploymentSettable>
             <serviceSettable>false</serviceSettable>
             <description/>
             <constraint/>
-            <modTime>1546548219337</modTime>
+            <modTime>1546618570604</modTime>
         </globalVariable>
     </globalVariables>
 </repository>

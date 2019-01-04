@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cluster xmlns="http://tibco.com/businessevents/configuration/5.5">
     <revision>
-        <version>15</version>
+        <version>1</version>
         <author>shivkumarchelwa</author>
         <date>2019/01/04 10:19:09</date>
         <comment/>
     </revision>
-    <name>ChangeHealthPOC</name>
+    <name>be_container_app</name>
     <message-encoding>UTF-8</message-encoding>
     <object-management>
         <memory-manager/>
