@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table:Table xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Table="http:///com/tibco/cep/decision/table/model/DecisionTable.ecore" name="DetermineCoverage_DT" folder="/VirtualRuleFunctions/" implements="/VirtualRuleFunctions/DetermineCoverage_VF">
+  <decisionTable/>
+  <exceptionTable/>
+  <argument direction="BOTH">
+    <property path="/Concepts/Coverage" alias="coverage" resourceType="CONCEPT"/>
+  </argument>
+  <argument direction="BOTH">
+    <property path="/Concepts/EligibilityRequest" alias="eligibiityReq" resourceType="CONCEPT"/>
+  </argument>
+  <argument direction="BOTH">
+    <property path="/Concepts/EligibilityResponse" alias="eligibiityRes" resourceType="CONCEPT"/>
+  </argument>
+</Table:Table>

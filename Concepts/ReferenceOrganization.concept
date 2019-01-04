@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="ReferenceOrganization" description="" GUID="BFD1AA8D-2247-C8E1-6069-B7F8A9355C0C" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="reference" ownerProjectName="be-container-app" ownerPath="/Concepts/ReferenceOrganization"/>
+</element:Concept>

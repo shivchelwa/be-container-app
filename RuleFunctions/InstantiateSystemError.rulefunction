@@ -1,0 +1,30 @@
+/**
+ * @description Create and return a new instance of SystomError
+ */
+Concept rulefunction RuleFunctions.InstantiateSystemError {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		String system;
+		String code;
+	}
+	body {
+		//If null create a new instance
+		Concepts.SystemError systemError = Instance.newInstance("/Concepts/SystemError", null);
+		systemError.code = Instance.newInstance("/Concepts/ErrorCodeList", null);
+		
+		//Set system and code
+		Concepts.ErrorCode errorCode = Instance.newInstance("/Concepts/ErrorCode", null);
+		errorCode.system = system;
+		errorCode.code = code;
+		
+		System.debugOut("Concepts.ErrorCode JSON: " + Instance.serializeToJSON(errorCode, true, ""));
+		
+		systemError.code.coding[systemError.code.coding@length] = errorCode;
+		
+		System.debugOut("Concepts.SystemError JSON: " + Instance.serializeToJSON(systemError, true, ""));
+		
+		return systemError;
+	}
+}

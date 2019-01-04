@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<repository xmlns="http://www.tibco.com/xmlns/repo/types/2002">
+    <globalVariables>
+        <globalVariable>
+            <name>RequestURL</name>
+            <value>http://www.payerOrg2.com/fhir/eligibility/</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1546530201823</modTime>
+        </globalVariable>
+        <globalVariable>
+            <name>InvalidProvierErrorURL</name>
+            <value/>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1546530300765</modTime>
+        </globalVariable>
+    </globalVariables>
+</repository>

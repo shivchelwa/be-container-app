@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Scorecard xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Scorecards/" folder="/Scorecards/" name="SystemConstants" description="" GUID="0C8239C4-52A4-8A0B-7699-84E5F4174655" ownerProjectName="be-container-app" scorecard="true">
+  <properties name="InvalidProviderSystem" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="InvalidInsurerSystem" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="NoCoverageSystem" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="InvalidProviderCode" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="InvalidInsurerCode" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="NoCoverageCode" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="EligibilityRequestURL" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="CacheRequestTimeout" ownerProjectName="be-container-app" type="long" ownerPath="/Scorecards/SystemConstants"/>
+  <properties name="CacheRequestURL" ownerProjectName="be-container-app" ownerPath="/Scorecards/SystemConstants"/>
+</element:Scorecard>

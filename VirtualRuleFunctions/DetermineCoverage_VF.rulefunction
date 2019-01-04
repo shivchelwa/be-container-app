@@ -1,0 +1,16 @@
+/**
+ * @description Determine Patient Coverage
+ */
+virtual void rulefunction VirtualRuleFunctions.DetermineCoverage_VF {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Concepts.Coverage coverage;
+		Concepts.EligibilityRequest eligibiityReq;
+		Concepts.EligibilityResponse eligibiityRes;
+	}
+	body {
+		
+	}
+}

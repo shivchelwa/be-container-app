@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="ErrorCode" description="" GUID="A214854E-9614-78FE-552D-7829DA0DF0BA" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="system" ownerProjectName="be-container-app" ownerPath="/Concepts/ErrorCode"/>
+  <properties name="code" ownerProjectName="be-container-app" ownerPath="/Concepts/ErrorCode"/>
+</element:Concept>

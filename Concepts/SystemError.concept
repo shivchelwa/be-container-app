@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="SystemError" description="" GUID="133B9A51-386A-0AC1-C3FB-448203606F51" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
   <extendedProperties/>
-  <properties name="System" ownerProjectName="be-container-app" ownerPath="/Concepts/SystemError"/>
-  <properties name="Code" ownerProjectName="be-container-app" ownerPath="/Concepts/SystemError"/>
+  <properties name="code" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ErrorCodeList" ownerPath="/Concepts/SystemError"/>
 </element:Concept>

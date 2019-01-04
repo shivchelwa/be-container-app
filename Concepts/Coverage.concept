@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="Coverage" description="" GUID="BFACBDFE-7AF4-D357-1C7D-C6BFC43A6CBE" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="Coverage" description="" GUID="097AEC37-E872-67B2-65DB-4DBDF22918CA" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
   <extendedProperties/>
   <properties name="CoverageId" ownerProjectName="be-container-app" ownerPath="/Concepts/Coverage"/>
   <properties name="EffectiveStartDate" ownerProjectName="be-container-app" type="DateTime" ownerPath="/Concepts/Coverage"/>
   <properties name="EffectiveEndDate" ownerProjectName="be-container-app" type="DateTime" ownerPath="/Concepts/Coverage"/>
   <properties name="Deductible" ownerProjectName="be-container-app" type="double" ownerPath="/Concepts/Coverage"/>
   <properties name="OutOfPocketMax" ownerProjectName="be-container-app" type="double" ownerPath="/Concepts/Coverage"/>
-  <properties name="Copay" ownerProjectName="be-container-app" type="double" ownerPath="/Concepts/Coverage"/>
-  <properties name="Coinsurance" ownerProjectName="be-container-app" type="double" ownerPath="/Concepts/Coverage"/>
+  <properties name="Copay" ownerProjectName="be-container-app" type="int" ownerPath="/Concepts/Coverage"/>
+  <properties name="Coinsurance" ownerProjectName="be-container-app" type="int" ownerPath="/Concepts/Coverage"/>
   <properties name="Covered" ownerProjectName="be-container-app" ownerPath="/Concepts/Coverage"/>
 </element:Concept>

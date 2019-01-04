@@ -1,0 +1,34 @@
+/**
+ * @description 
+ * @author Shivkumars-MacBook-Pro.local
+ */
+rule Rules.DetermineCoverage {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.FindCoverageRequest findCoverageReq;
+		Concepts.EligibilityRequest eligibiityReq;
+		Concepts.EligibilityResponse eligibiityRes;
+		Concepts.Coverage coverage;
+	}
+	when {
+		eligibiityReq.coverage.reference == coverage.CoverageId;
+		eligibiityReq.ID == eligibiityRes.ID;
+	}
+	then {
+		Object[] arguments = {eligibiityReq, coverage};
+		VRF.invokeVRFImplByName("/VirtualRuleFunctions.DetermineCoverage_VF", "DetermineCoverage_DT", arguments);
+		
+		//Decision Table Rules Set inforce=true/false
+		if(eligibiityRes.inforce == true) {
+			eligibiityRes.disposition = "Policy is currently in-force";
+		}
+		
+		String responsePayload = Instance.serializeToJSON(eligibiityRes, true, "");
+		Events.FindCoverageResponse findCoverageRes = Events.FindCoverageResponse.FindCoverageResponse(null, responsePayload);
+		Event.replyEvent(findCoverageReq, findCoverageRes);
+
+	}
+}

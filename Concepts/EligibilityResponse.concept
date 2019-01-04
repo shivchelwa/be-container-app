@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="EligibilityResponse" description="" GUID="B8DD87D1-3BA5-F5A1-C615-4BAC80EF0E47" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
   <extendedProperties/>
-  <properties name="ResourceType" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="resourceType" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
   <properties name="ID" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Status" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Created" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Request" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Disposition" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Coverage" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Insurer" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="Inforce" ownerProjectName="be-container-app" type="boolean" ownerPath="/Concepts/EligibilityResponse"/>
-  <properties name="SysError" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/SystemError" array="true" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="status" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="created" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="request" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceRequestRes" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="disposition" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="coverage" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceCoverageRes" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="insurer" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceInsurerRes" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="inforce" ownerProjectName="be-container-app" type="boolean" ownerPath="/Concepts/EligibilityResponse"/>
+  <properties name="error" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/SystemError" array="true" ownerPath="/Concepts/EligibilityResponse"/>
 </element:Concept>

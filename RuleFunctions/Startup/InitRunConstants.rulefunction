@@ -1,0 +1,25 @@
+/**
+ * @description 
+ */
+void rulefunction RuleFunctions.Startup.InitRunConstants {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		
+	}
+	body {
+		Scorecards.SystemConstants.EligibilityRequestURL = System.getGlobalVariableAsString("%%Application/RequestURL%%", "http://www.payerOrg2.com/fhir/eligibility/");
+		
+		Scorecards.SystemConstants.InvalidProviderSystem = System.getGlobalVariableAsString("%%Application/ErrorURL/InvalidProvider%%","http://changehealthcare.com/fhir/invalid-provider-organization-error");
+		Scorecards.SystemConstants.InvalidInsurerSystem = System.getGlobalVariableAsString("%%Application/ErrorURL/InvalidInsurer%%","http://changehealthcare.com/fhir/invalid-insurer-organization-error");
+		Scorecards.SystemConstants.NoCoverageSystem = System.getGlobalVariableAsString("%%Application/ErrorURL/CoverageNotFound%%", "http://changehealthcare.com/fhir/coverage-not-found-error");
+
+		Scorecards.SystemConstants.InvalidInsurerCode = System.getGlobalVariableAsString("%%Application/ErrorCode/InvalidInsurer%%","a002");
+		Scorecards.SystemConstants.InvalidProviderCode = System.getGlobalVariableAsString("%%Application/ErrorCode/InvalidProvider%%","a001");
+		Scorecards.SystemConstants.NoCoverageCode = System.getGlobalVariableAsString("%%Application/ErrorCode/CoverageNotFound%%","a003");
+		
+		Scorecards.SystemConstants.CacheRequestTimeout = System.getGlobalVariableAsLong("%%Tuning/HttpRequestTimeout%%", 1000L);
+		Scorecards.SystemConstants.CacheRequestURL = System.getGlobalVariableAsString("%%ExternalAPI/ElastiCache/GetCoverageAPI%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=");
+	}
+}

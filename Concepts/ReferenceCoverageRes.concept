@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="ReferenceCoverageRes" description="" GUID="90DBEBDC-9C00-FE24-DA63-87F4DD2099CC" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="reference" ownerProjectName="be-container-app" ownerPath="/Concepts/ReferenceCoverageRes"/>
+</element:Concept>

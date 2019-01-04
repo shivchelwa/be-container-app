@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="EligibilityRequest" description="" GUID="296334AB-15A2-9D8C-D74B-285999C8AAD7" ownerProjectName="be-container-app" superConceptPath="" autoStartStateMachine="true">
   <extendedProperties/>
-  <properties name="ResourceType" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="resourceType" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
   <properties name="ID" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Status" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Patient" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Created" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Organization" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Insurer" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityRequest"/>
-  <properties name="Coverage" ownerProjectName="be-container-app" type="ConceptReference" conceptTypePath="/Concepts/ReferenceData" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="status" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="patient" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferencePatient" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="created" ownerProjectName="be-container-app" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="organization" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceOrganization" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="insurer" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceInsurer" ownerPath="/Concepts/EligibilityRequest"/>
+  <properties name="coverage" ownerProjectName="be-container-app" type="ContainedConcept" conceptTypePath="/Concepts/ReferenceCoverage" ownerPath="/Concepts/EligibilityRequest"/>
 </element:Concept>
