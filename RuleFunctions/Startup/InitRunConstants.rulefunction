@@ -19,7 +19,7 @@ void rulefunction RuleFunctions.Startup.InitRunConstants {
 		Scorecards.SystemConstants.InvalidProviderCode = System.getGlobalVariableAsString("%%Application/ErrorCode/InvalidProvider%%","a001");
 		Scorecards.SystemConstants.NoCoverageCode = System.getGlobalVariableAsString("%%Application/ErrorCode/CoverageNotFound%%","a003");
 		
-		Scorecards.SystemConstants.CacheRequestTimeout = System.getGlobalVariableAsLong("%%Tuning/HttpRequestTimeout%%", 1000L);
-		Scorecards.SystemConstants.CacheRequestURL = System.getGlobalVariableAsString("%%ExternalAPI/ElastiCache/GetCoverageAPI%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/prod?accNum=");
+		Scorecards.SystemConstants.CacheRequestTimeout = System.getGlobalVariableAsLong("%%ELASTICACHE_GET_TIMEOUT%%", 1000L);
+		Scorecards.SystemConstants.CacheRequestURL = System.getGlobalVariableAsString("%%ELASTICACHE_GET_URL%%", "https://trw47ga2z5.execute-api.us-east-1.amazonaws.com/poc/coverage/");
 	}
 }

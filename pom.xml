@@ -36,8 +36,8 @@
             <baseBEImage>5.5.0-v01</baseBEImage>
             <maintainer>shiv chelwa</maintainer>
             <email>schelwa@tibco.com</email>
-            <labels>ApplicationName=be_container_app</labels>
-            <appImage>be_container_app:latest</appImage>
+            <labels>ApplicationName=poc_coverage_service</labels>
+            <appImage>poc_coverage_service:latest</appImage>
             <overwriteDockerfile>true</overwriteDockerfile>
           </appImageConfig>
           <dockerRegistryConfig>

@@ -15,7 +15,7 @@ void rulefunction RuleFunctions.FindCoveragePP {
 		Event.Ext.sendEventImmediate(logEvent);
 		
 		//Generate UUID
-		String UUID = Functions.Generate.UUID();;
+		String UUID = Functions.Generate.UUID();
 		findCoverageReq.requestId = UUID;
 
 		//Create a EligibilityRequest Concept from JSON payload

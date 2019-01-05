@@ -2,9 +2,9 @@
 <channel:Channel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:channel="http:///com/tibco/cep/designtime/core/model/service/channel" xmlns:designtime="http:///com/tibco/cep/designtime/core/model/designtime_ontology.ecore" namespace="/Channels/" folder="/Channels/" name="Kafka" description="" GUID="EAA38A7D-B2D8-2588-0FFD-593D9ED52404" ownerProjectName="be-container-app">
   <driver label="KAFKA" channel="/">
     <properties>
-      <properties xsi:type="designtime:SimpleProperty" name="kafka.broker.urls" value="%%Connections/Kafka/BrokerURL%%" mandatory="true"/>
-      <properties xsi:type="designtime:SimpleProperty" name="kafka.security.protocol" value="%%Connections/Kafka/SecurityProtocol%%" mandatory="true"/>
-      <properties xsi:type="designtime:SimpleProperty" name="kafka.sasl.mechanism" value="%%Connections/Kafka/SASLMechanism%%"/>
+      <properties xsi:type="designtime:SimpleProperty" name="kafka.broker.urls" value="%%KAFKA_BROKER_URL%%" mandatory="true"/>
+      <properties xsi:type="designtime:SimpleProperty" name="kafka.security.protocol" value="%%KAFKA_SECURITY_PROTOCOL%%" mandatory="true"/>
+      <properties xsi:type="designtime:SimpleProperty" name="kafka.sasl.mechanism" value="%%KAFKA_SASL_MECHANISM%%"/>
       <properties xsi:type="designtime:SimpleProperty" name="kafka.trusted.certs.folder" value=""/>
       <properties xsi:type="designtime:SimpleProperty" name="kafka.keystore.identity" value=""/>
       <properties xsi:type="designtime:SimpleProperty" name="kafka.truststore.password" value=""/>
@@ -12,7 +12,7 @@
     <destinations folder="/Channels/Kafka/" name="LogMessage" description="" GUID="E15AF535-8376-199D-95F9-2CE6E3AB1CEB" ownerProjectName="be-container-app" serializerDeserializerClass="com.tibco.cep.driver.kafka.serializer.KafkaMapSerializer" driverConfig="//@driver">
       <properties>
         <properties xsi:type="designtime:SimpleProperty" name="IncludeEventType" value="ALWAYS" mandatory="true"/>
-        <properties xsi:type="designtime:SimpleProperty" name="topic.name" value="%%Destinations/Kafka/LogMessage%%" mandatory="true"/>
+        <properties xsi:type="designtime:SimpleProperty" name="topic.name" value="%%KAFKA_DEST_WAYPOINT%%" mandatory="true"/>
         <properties xsi:type="designtime:SimpleProperty" name="group.id" value="be_group"/>
         <properties xsi:type="designtime:SimpleProperty" name="client.id" value=""/>
         <properties xsi:type="designtime:SimpleProperty" name="consumer.threads" value="1"/>
