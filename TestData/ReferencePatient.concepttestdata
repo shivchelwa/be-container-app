@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testdata name="ReferencePatient" folder="TestData" project="be-container-app" entityPath="/Concepts/ReferencePatient" type="Concept"><ns0:ReferencePatient xmlns:ns0="www.tibco.com/be/ontology/Concepts/ReferencePatient" isSelected="true"><reference>P-000001</reference></ns0:ReferencePatient></testdata>

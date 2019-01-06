@@ -1,0 +1,18 @@
+{
+	"resourceType": "EligibilityRequest",
+	"ID": "23454",
+	"status": "active",
+	"patient": {
+		"reference": "Patient/G23445"
+	},
+	"created": "2019-01-01T07:15:30.000",
+	"organization": {
+		"reference": "Organization/ABC"
+	},
+	"insurer": {
+		"reference": "Organization/Acme"
+	},
+	"coverage": {
+		"reference": "C-000008"
+	}
+}

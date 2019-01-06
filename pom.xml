@@ -93,6 +93,7 @@
     								</versionRange>
     								<goals>
     									<goal>beTestCompile</goal>
+    									<goal>becompile</goal>
     								</goals>
     							</pluginExecutionFilter>
     							<action>
@@ -106,7 +107,21 @@
     	</plugins>
     </pluginManagement>
   </build>
-  <dependencies/>
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+	<dependency>
+	    <groupId>redis.clients</groupId>
+	    <artifactId>jedis</artifactId>
+	    <version>3.0.0</version>
+	    <type>jar</type>
+	    <scope>compile</scope>
+	</dependency>
+  </dependencies>
   <properties>
     <reuseForks>false</reuseForks>
   </properties>

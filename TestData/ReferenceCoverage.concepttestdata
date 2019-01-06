@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testdata name="ReferenceCoverage" folder="TestData" project="be-container-app" entityPath="/Concepts/ReferenceCoverage" type="Concept"><ns0:ReferenceCoverage xmlns:ns0="www.tibco.com/be/ontology/Concepts/ReferenceCoverage" isSelected="true" extId="C-000008"><reference>C-000008</reference></ns0:ReferenceCoverage></testdata>

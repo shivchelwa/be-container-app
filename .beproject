@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration:StudioProjectConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:configuration="http:///com/tibco/cep/studio/common/configuration/model/project_configuration.ecore" name="be-container-app" version="5.5.0" build="170" xpathVersion="2.0">
+  <thirdpartyLibEntries path="JUNIT_HOME/junit.jar" var="true"/>
   <javaSourceFolderEntries entryType="JAVA_SOURCE_FOLDER" path="/ChangeHealthPOC/JavaSrc" readOnly="true"/>
   <javaSourceFolderEntries entryType="JAVA_SOURCE_FOLDER" path="/be-container-app/JavaSrc" readOnly="true"/>
   <enterpriseArchiveConfiguration name="ChangeHealthPOC" author="shivkumarchelwa" version="6" path="/Users/shivkumarchelwa/workspace/docker/CHC/be_container_app-1.0.0.ear" overwrite="true"/>
