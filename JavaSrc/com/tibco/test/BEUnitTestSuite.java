@@ -27,7 +27,7 @@ public class BEUnitTestSuite {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		engine = new BETestEngine("target/be_container_app-1.0.0.ear", "/home/vagrant/tibco/be/5.5/bin/be-engine.tra",
+		engine = new BETestEngine("target/be_container_app-1.0.0.ear", "/opt/tibco/be/5.5/bin/be-engine.tra",
 				"Deployments/be_container_app.cdd", "default", "inference-class", true);
 
 		// Start the test engine

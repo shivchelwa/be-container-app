@@ -18,7 +18,7 @@
         <extensions>true</extensions>
         <configuration>
           <beProjectDetails>
-            <beHome>/home/vagrant/tibco/be/5.5</beHome>
+            <beHome>/opt/tibco/be/5.5</beHome>
             <jdkHome/>
             <earLocation>target</earLocation>
             <projLibLocation>target</projLibLocation>
@@ -32,7 +32,7 @@
           </teaConfig>
           <appImageConfig>
             <cddFileLocation>Deployments/be_container_app.cdd</cddFileLocation>>
-            <targetDir>/home/vagrant/workspace/docker</targetDir>
+            <targetDir>/opt/workspace/docker</targetDir>
             <baseBEImage>5.5.0-v01</baseBEImage>
             <maintainer>shiv chelwa</maintainer>
             <email>schelwa@tibco.com</email>
