@@ -18,7 +18,7 @@
         <extensions>true</extensions>
         <configuration>
           <beProjectDetails>
-            <beHome>/Users/shivkumarchelwa/Applications/BE5.5/be/5.5</beHome>
+            <beHome>/home/vagrant/tibco/be/5.5</beHome>
             <jdkHome/>
             <earLocation>target</earLocation>
             <projLibLocation>target</projLibLocation>
@@ -32,11 +32,11 @@
           </teaConfig>
           <appImageConfig>
             <cddFileLocation>Deployments/be_container_app.cdd</cddFileLocation>>
-            <targetDir>/Users/shivkumarchelwa/workspace/docker/CHC</targetDir>
+            <targetDir>/home/vagrant/workspace/docker</targetDir>
             <baseBEImage>5.5.0-v01</baseBEImage>
             <maintainer>shiv chelwa</maintainer>
             <email>schelwa@tibco.com</email>
-            <labels>ApplicationName=poc_coverage_service</labels>
+            <labels>ApplicationName=coverage_service</labels>
             <appImage>poc_coverage_service:latest</appImage>
             <overwriteDockerfile>true</overwriteDockerfile>
           </appImageConfig>
