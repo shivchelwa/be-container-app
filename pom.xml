@@ -32,7 +32,7 @@
           </teaConfig>
           <appImageConfig>
             <cddFileLocation>Deployments/be_container_app.cdd</cddFileLocation>>
-            <targetDir>{$WORKSPACE}/docker</targetDir>
+            <targetDir>docker</targetDir>
             <baseBEImage>5.5.0-v01</baseBEImage>
             <maintainer>shiv chelwa</maintainer>
             <email>schelwa@tibco.com</email>
