@@ -18,7 +18,7 @@
         <extensions>true</extensions>
         <configuration>
           <beProjectDetails>
-            <beHome>/opt/tibco/be/5.5</beHome>
+            <beHome>${be.home}</beHome>
             <jdkHome/>
             <earLocation>target</earLocation>
             <projLibLocation>target</projLibLocation>
